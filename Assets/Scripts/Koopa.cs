@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goomba : Enemy
+public class Koopa : Enemy
 {
-    public override void Attack()
+    public enum KoopaShellState
     {
-        base.Attack();
+        shelled,
+        unShelled
     }
 
-    public override void Die()
+    KoopaShellState shellState = KoopaShellState.shelled;
+
+    public override IEnumerator Wander()
+    {
+        return base.Wander();
+
+    }
+    public override void TakeDamage()
     {
         base.Die();
     }
@@ -17,6 +25,11 @@ public class Goomba : Enemy
     public override void DropLoot()
     {
         base.DropLoot();
+    }
+
+    public override void GroundCheck()
+    {
+        base.GroundCheck();
     }
 
     public override void Start()
