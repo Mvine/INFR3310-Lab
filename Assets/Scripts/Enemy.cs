@@ -5,6 +5,15 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
 
+    public enum EnemyState
+    {
+        idle,
+        roaming,
+        attacking
+    }
+
+    protected EnemyState state = EnemyState.idle; 
+
     //Inspector Variables
     [Header("Enemy Stats")]
     [Tooltip("Enemy base health")]
@@ -27,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
     protected Collider groundCheckCollider = null;
 
     private Transform m_enemyTransform;
-    private int m_currentHealth;
+    protected int m_currentHealth;
     private int m_curentSpeed;
     private bool m_isGrounded;
 
@@ -41,10 +50,8 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Update();
 
     //Enemy Functions
-    public virtual IEnumerator Wander(float moveRadius, float moveSpeed)
+    public virtual IEnumerator Wander()
     {
-
-        while(transform.position !=)
 
         yield return null;
         //we'll do some kinda basic wander pattern here
@@ -75,5 +82,11 @@ public abstract class Enemy : MonoBehaviour
     public Transform EnemyTransform { get => m_enemyTransform; set => m_enemyTransform = value; }
     public int CurrentHealth { get => m_currentHealth; set => m_currentHealth = value; }
     public int CurentSpeed { get => m_curentSpeed; set => m_curentSpeed = value; }
+    public EnemyState State { get => state; set => state = value; }
+
+    public int GetCurrentHealth()
+    {
+        return m_currentHealth;
+    }
 
 }

@@ -20,6 +20,8 @@ public class Koopa : Enemy
     public override void TakeDamage()
     {
         base.Die();
+
+        int health = CurrentHealth;
     }
 
     public override void DropLoot()
