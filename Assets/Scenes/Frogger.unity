@@ -2055,6 +2055,7 @@ GameObject:
   - component: {fileID: 942615957}
   - component: {fileID: 4262394122415413149}
   - component: {fileID: 942615956}
+  - component: {fileID: 4262394122415413150}
   m_Layer: 0
   m_Name: Frogger
   m_TagString: Player
@@ -4934,6 +4935,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &4262394122415413150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942615952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6a879158ed3d240b80dd9332959945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4359734848895560187
 PrefabInstance:
   m_ObjectHideFlags: 0
