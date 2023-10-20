@@ -2,26 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Factory<T> : MonoBehaviour where T : MonoBehaviour
+public class Factory : MonoBehaviour
 {
-    private static T s_instance = null;
-
-    public static T Instance
+    // Start is called before the first frame update
+    void Start()
     {
-        get
-        {
-            if (s_instance == null)
-            {
-                s_instance = (T)FindFirstObjectOfType(typeof(T));
-                if (s_instance == null)
-                {
-                    GameObject instanceGameObject = new GameObject();
-                    instanceGameObject.name = typeof(T).ToString();
+        
+    }
 
-                    s_instance = instanceGameObject.AddComponent<T>();
-                }
-            }
-            return s_instance;
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
