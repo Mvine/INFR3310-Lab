@@ -15,6 +15,11 @@ public class MoveCycle : MonoBehaviour
         rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     private void Update()
     {
         // Check if the object is past the right edge of the screen
