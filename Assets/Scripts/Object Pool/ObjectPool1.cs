@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-	public class ObjectPool : Singleton<ObjectPool>
+	public class ObjectPool : Singleton1<ObjectPool>
 	{
 		[SerializeField]
 		int defaultInitialQuantity = 1;
