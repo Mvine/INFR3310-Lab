@@ -19,11 +19,13 @@ public class MoveCycle : MonoBehaviour
     {
         // Check if the object is past the right edge of the screen
         if (direction.x > 0 && (transform.position.x - size) > rightEdge.x) {
-            transform.position = new Vector3(leftEdge.x - size, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(leftEdge.x - size, transform.position.y, transform.position.z);
+            Destroy(this);
         }
         // Check if the object is past the left edge of the screen
         else if (direction.x < 0 && (transform.position.x + size) < leftEdge.x) {
-            transform.position = new Vector3(rightEdge.x + size, transform.position.y, transform.position.z);
+            //transform.position = new Vector3(rightEdge.x + size, transform.position.y, transform.position.z);
+            Destroy(this);
         }
         // Move the object
         else {

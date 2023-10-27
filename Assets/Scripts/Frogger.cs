@@ -2,9 +2,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Frogger : MonoBehaviour
+public class Frogger : Singleton<Frogger>
 {
-    public SpriteRenderer spriteRenderer { get; private set; }
+    public SpriteRenderer spriteRenderer { get; set; }
 
     public Sprite idleSprite;
     public Sprite leapSprite;
@@ -14,8 +14,9 @@ public class Frogger : MonoBehaviour
     private float farthestRow;
     private bool cooldown;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
     }
