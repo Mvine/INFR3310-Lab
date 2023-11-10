@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFactory : MonoBehaviour
+public class EnemyFactory : Factory
 {
-    //[SerializeField]
-    //Enemy enemy;
 
     [SerializeField]
     List<Enemy> enemyList;
@@ -17,6 +15,7 @@ public class EnemyFactory : MonoBehaviour
         foreach (Enemy enemy in enemyList)
         {
             enemy.Constructor();
+            
         }
     }
 

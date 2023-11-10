@@ -37,8 +37,8 @@ public class CarSpawner : MonoBehaviour
 
     void SpawnCar(Vector2 position)
     {
-        GameObject.Instantiate(carPrefab, position, Quaternion.identity); // We replace our instancing with calling a return object from our pool using the key "cars"
+        //GameObject.Instantiate(carPrefab, position, Quaternion.identity); // We replace our instancing with calling a return object from our pool using the key "cars"
 
-        //ObjectPoolManager.Instance().ReturnObject("cars", position, Quaternion.identity);
+        ObjectPoolManager.Instance().ReturnObject("cars", position, Quaternion.identity);
     }
 }

@@ -1,30 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
 {
     //Things an objective might need are a UI element and a reference to the objective manager
+    [SerializeField]
+    GameObject TextUI;
 
+    protected GameObject m_text;
+    
     //Functions we need
     private void Start()
     {
-        //create a reference to the manager
-    }
+        if(TextUI)
+        {
+            m_text = TextUI;
+        }
 
-    private void OnEnable()
-    {
-        //Enable appropriate UI
-    }
-    private void OnDisable()
-    {
-        //Disable appropriate UI
+        //create a reference to the manager
     }
     protected void OnCompleted()
     {
         //set UI to unactive
+        TextUI.SetActive(false);
+
         //Unregister from the manager using the singleton
+
+        ObjectiveManager.Instance().UnregisterObjective(this);
+
         //Destory this
+
+        Destroy(this);
     }
 
 }
