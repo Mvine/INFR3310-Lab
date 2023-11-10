@@ -2718,7 +2718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 8619932971975925152, guid: 980bdf7fa699fbf4f980ad313057807c,
     type: 3}
-  spawnTimer: 3
+  spawnTimer: 0.05
 --- !u!1 &1316297006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,11 +4001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf9b5897a0fe93499a688d70120e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - tag: cars
-    prefab: {fileID: 8619932971975925152, guid: 980bdf7fa699fbf4f980ad313057807c,
-      type: 3}
-    initialSize: 3
+  pools: []
 --- !u!4 &1974868444
 Transform:
   m_ObjectHideFlags: 0

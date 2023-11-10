@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     private Frogger frogger;
     private Home[] homes;
@@ -18,12 +18,12 @@ public class GameManager : MonoBehaviour
 
     private float respawnTime;
 
-    private void Awake()
+    protected override void Awake()
     {
         Application.targetFrameRate = 60;
 
         homes = FindObjectsOfType<Home>();
-        frogger = FindObjectOfType<Frogger>();
+        frogger = Frogger.Instance(); //This can be replaced with the singleton now
     }
 
     private void Start()

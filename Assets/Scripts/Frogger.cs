@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Frogger : MonoBehaviour //Todo inherit from singleton
+public class Frogger : Singleton<Frogger> //Todo inherit from singleton
 {
     public SpriteRenderer spriteRenderer { get; set; }
 
@@ -14,7 +14,7 @@ public class Frogger : MonoBehaviour //Todo inherit from singleton
     private float farthestRow;
     private bool cooldown;
 
-    private void Awake()
+    protected override void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnPosition = transform.position;
