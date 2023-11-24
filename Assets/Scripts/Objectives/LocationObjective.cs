@@ -16,6 +16,7 @@ public class LocationObjective : Objective
         if (frog)
         {
             Debug.Log("frog");
+            this.gameObject.SetActive(false);
             OnCompleted();
         }
     }

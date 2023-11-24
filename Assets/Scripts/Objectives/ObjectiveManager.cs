@@ -45,5 +45,7 @@ public class ObjectiveManager : Singleton<ObjectiveManager>
         {
             objectives[0].gameObject.SetActive(true);
         }
+
+        Destroy(a_objective.gameObject);
     }
 }
