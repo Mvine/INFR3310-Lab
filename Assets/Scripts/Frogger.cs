@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Frogger : Singleton<Frogger> //Todo inherit from singleton
 {
     public SpriteRenderer spriteRenderer { get; set; }
+    public UnityAction onMoved;
 
     public Sprite idleSprite;
     public Sprite leapSprite;
@@ -26,21 +28,25 @@ public class Frogger : Singleton<Frogger> //Todo inherit from singleton
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             Move(Vector3.up);
+            onMoved?.Invoke();
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
             Move(Vector3.left);
+            onMoved?.Invoke();
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
             Move(Vector3.right);
+            onMoved?.Invoke();
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             Move(Vector3.down);
+            onMoved?.Invoke();
         }
     }
 
